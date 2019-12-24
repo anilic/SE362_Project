@@ -12,6 +12,8 @@ async def hello(websocket, path):
         greeting = f"ls in name: {name}!"
     elif ("cd" in name):
         greeting = f"cd in name: {name}!"
+    elif ("mv" in name):
+        greeting = f"mv in name: {name}!"
     else:
         greeting = f": {name}!"
     
@@ -25,3 +27,4 @@ asyncio.get_event_loop().run_until_complete(start_server)
 asyncio.get_event_loop().run_forever()
 
 #Converted to finding Linux commands in names by Deniz Kiratli
+#Added "mv" command by H. Berfin Polat
