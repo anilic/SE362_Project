@@ -8,10 +8,15 @@ import websockets
 async def hello():
     uri = "ws://localhost:8765"
     async with websockets.connect(uri) as websocket:
-        name = input("What's your name? ")
+        name = input("How may i greet you? ")
 
         await websocket.send(name)
         print(f"> {name}")
+	
+	age=input("How many moons have passed since your birth? ")
+	
+	await websocket.send(age)
+	print(f"> {name}")
 
         greeting = await websocket.recv()
         print(f"< {greeting}")
